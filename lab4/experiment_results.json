@@ -1,0 +1,17 @@
+{
+  "model_name": "Voting(RF+ET+CalibratedHGB, soft)",
+  "roc_auc": 0.8131,
+  "accuracy": 0.8,
+  "precision": 0.8109,
+  "recall": 0.9314,
+  "f1": 0.867,
+  "split": {
+    "test_size": 0.25,
+    "stratify": true,
+    "random_seed": 42,
+    "n_train": 750,
+    "n_test": 250
+  },
+  "features": "raw + credit_per_month + age_to_duration + credit_per_age + risk_flag_sum + long_credit + young",
+  "model": "VotingClassifier(soft): RF(1000, leaf=2, balanced_subsample) + ET(1000, leaf=2, balanced_subsample) + CalibratedHGB(sigmoid, cv=3, lr=0.05, iter=400, leaves=31), weights=[2,1,2]"
+}
